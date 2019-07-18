@@ -9,7 +9,7 @@
     "devserver": "nodemon --watch server.js /models /controllers /routes",
     "devclient": "( cd ./client && npm start )",
     "dev": "concurrently \"npm run devserver\" \"npm run devclient\"",
-    "idev": "( npm install && cd ./client && npm install"
+    "idev": "( npm install && cd ./client && npm install )"
   },
   "repository": {
     "type": "git",
