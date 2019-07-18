@@ -46,11 +46,12 @@ const List = ({ match }) => {
         <Table.Body>
           {books.map(book => {
             const { _id, title, author, genre, publicationDate } = book
-            const { givenName, lastName } = author
             return (
               <Table.Row key={_id}>
                 <Table.Cell>{title}</Table.Cell>
-                <Table.Cell>{`${givenName} ${lastName}`}</Table.Cell>
+                <Table.Cell>
+                  {author ? `${author.givenName} ${author.lastName}` : ''}
+                </Table.Cell>
                 <Table.Cell>{genre}</Table.Cell>
                 <Table.Cell>
                   {publicationDate
