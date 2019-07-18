@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devserver": "nodemon --watch server.js /models /controllers /routes",
+    "devclient": "( cd ./client && npm start )",
+    "dev": "concurrently \"npm run devserver\" \"npm run devclient\"",
+    "idev": "( npm install && cd ./client && npm install"
   },
   "repository": {
     "type": "git",
@@ -21,5 +25,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.6.5"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.19.1"
   }
 }
