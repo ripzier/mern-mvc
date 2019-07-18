@@ -7,7 +7,7 @@ exports.list = (req, res) => {
     })
     .catch(error => {
       console.log(error)
-      res.status(500).send({ message: 'Something went wrong' })
+      res.status(500).send({ message: 'Ocurrió un error' })
     })
 }
 
@@ -18,7 +18,7 @@ exports.details = (req, res) => {
     })
     .catch(error => {
       console.log(error)
-      res.status(500).send({ message: 'Something went wrong' })
+      res.status(500).send({ message: 'Ocurrió un error' })
     })
 }
 
@@ -30,7 +30,7 @@ exports.create = (req, res) => {
     })
     .catch(error => {
       console.log(error)
-      res.status(500).send({ message: 'Something went wrong' })
+      res.status(500).send({ message: 'Ocurrió un error' })
     })
 
 }
@@ -42,7 +42,7 @@ exports.update = (req, res) => {
     })
     .catch(error => {
       console.log(error)
-      res.status(500).send({ message: 'Something went wrong' })
+      res.status(500).send({ message: 'Ocurrió un error' })
     })
 }
 
@@ -53,6 +53,6 @@ exports.delete = (req, res) => {
     })
     .catch(error => {
       console.log(error)
-      res.status(500).send({ message: 'Something went wrong' })
+      res.status(500).send({ message: 'Ocurrió un error' })
     })
 }
