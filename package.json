@@ -9,7 +9,9 @@
     "devserver": "nodemon --watch server.js /models /controllers /routes",
     "devclient": "( cd ./client && npm start )",
     "dev": "concurrently \"npm run devserver\" \"npm run devclient\"",
-    "idev": "( npm install && cd ./client && npm install )"
+    "idev": "( npm install && cd ./client && npm install )",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
