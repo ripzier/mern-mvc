@@ -28,6 +28,10 @@ app.use(express.json())
 app.use('/api/autores', authors)
 app.use('/api/libros', books)
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+})
+
 app.listen({ port }, () => {
   console.log(`Servidor listo en http://localhost:${port}`)
 })
