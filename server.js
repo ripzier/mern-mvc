@@ -7,9 +7,10 @@ const authors = require('./routes/authors')
 const books = require('./routes/books')
 const { typeDefs, resolvers } = require('./graphql/schema')
 
-const port = process.env.PORT || 5000
-const mongo_uri = 'mongodb://dba:3w2U$^!#lL5T@maincluster-shard-00-00-gmc7n.mongodb.net:27017,maincluster-shard-00-01-gmc7n.mongodb.net:27017,maincluster-shard-00-02-gmc7n.mongodb.net:27017/mern-mvc?ssl=true&replicaSet=MainCluster-shard-0&authSource=admin&retryWrites=true'
+const { MONGO_URI, MONGO_USER, MONGO_PASSWORD, PORT } = process.env
 
+const port = PORT || 5000
+const mongo_uri = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_URI}`
 
 mongoose.connect(mongo_uri, { useNewUrlParser: true, useFindAndModify: false })
   .then(() => {
@@ -36,5 +37,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen({ port }, () => {
-  console.log(`Servidor listo en http://localhost:${port}`)
+  console.log(`Servidor listo en el puerto: ${port}`)
 })
