@@ -7,15 +7,14 @@ const books = require('./routes/books')
 const { typeDefs, resolvers } = require('./graphql/schema')
 
 const port = process.env.PORT || 5000
-// const mongo_uri = 'mongodb://localhost:27017/mvc'
-const mongo_uri = 'mongodb+srv://dba:3w2U$^!#lL5T@maincluster-gmc7n.mongodb.net/test?retryWrites=true&w=majority'
+const mongo_uri = 'mongodb://dba:3w2U$^!#lL5T@maincluster-shard-00-00-gmc7n.mongodb.net:27017,maincluster-shard-00-01-gmc7n.mongodb.net:27017,maincluster-shard-00-02-gmc7n.mongodb.net:27017/mern-mvc?ssl=true&replicaSet=MainCluster-shard-0&authSource=admin&retryWrites=true'
+
 
 mongoose.connect(mongo_uri, { useNewUrlParser: true, useFindAndModify: false })
   .then(() => {
     console.log(`Conectado a la base de datos: ${mongo_uri}`)
   })
   .catch(err => {
-    console.log(err)
     console.log('Error al conectarse a la base de datos')
     console.log('Terminando la aplicación ahora...')
     process.exit()
